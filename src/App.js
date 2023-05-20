@@ -5,15 +5,15 @@ import Home from './Home';
 import { useState } from 'react';
 
 function App() {
-  let i=0
+
 
   const [number, setNumber]=useState(50)
   const [color,setColor]=useState('red')
 
   const handleClick =(name1) => {
     
-    console.log("Hey you "+ name1 , i )
-    if((i%2)==0)
+    console.log("Hey you "+ name1 )
+    if((color==='red'))
     {
     setColor('blue')
     setNumber(55)
@@ -23,7 +23,7 @@ function App() {
       setColor('red')
       setNumber(50)
     }
-    i++
+ 
   }
 
   return (
@@ -35,6 +35,8 @@ function App() {
           APP COMPONENTS HERE
           <p>color is {color} , number is {number}
           </p>
+          <p></p>
+          <p></p>
           <Home/>
         </h1>
       </div>
