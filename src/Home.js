@@ -4,6 +4,7 @@ import BlogFile from "./BlogFile";
 const Home = () => {
     
 const [blog, setblog]=useState(null);
+const [isLoading, setLoad]=useState(true);
 
 useEffect(()=>{
     fetch('http://localhost:8000/blogs')
@@ -12,6 +13,7 @@ useEffect(()=>{
     })
     .then(data=> {
         setblog(data);
+        setLoad(false)
     })
 },[])
 const handleDelete=(id)=>{
@@ -21,6 +23,7 @@ const handleDelete=(id)=>{
 return (
 <div className="home">
 <p>Hi</p>
+{isLoading && <h1>Loading...</h1>}
  {blog && <BlogFile bloganyname={blog} handleDelete={handleDelete}/>}
 <p>Hello</p>
 </div>
