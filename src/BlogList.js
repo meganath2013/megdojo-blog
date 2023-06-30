@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 const BlogList = (props) => {
     const blogs=props.bloganyname
-    const handleDelete=props.handleDelete
 
 return ( 
 
