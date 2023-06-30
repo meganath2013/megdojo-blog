@@ -1,4 +1,4 @@
-const BlogFile = (props) => {
+const BlogList = (props) => {
     const blogs=props.bloganyname
     const handleDelete=props.handleDelete
 
@@ -8,11 +8,11 @@ return (
 <div className="blog-preview" key={blogItr.id}>
 <p>{blogItr.title}</p>
 <p>{blogItr.author}</p>
-<button onClick={()=>handleDelete(blogItr.id)}  > Delete </button>
+<button onClick={()=>handleDelete(blogItr.id)}> Delete </button>
 </div>
  ))}
 </div>
 );
 }
  
-export default BlogFile;
+export default BlogList;
