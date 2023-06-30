@@ -2,28 +2,38 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
-import { useState } from 'react';
+import Blogdetails from './Blogdetails';
+//import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Create from './Create';
 
 function App() {
 
 
 
   return (
+    <BrowserRouter>
     <div className="App">
       <div className="content">
-        <Navbar/>
+        
           {/* <button onClick={()=>handleClick('mega' )}>Button1</button> */}
         <h1>
-          <Route exact path='/'> 
-          <Home/>
+        <Navbar/>
+        </h1>
+          <Switch>
+          <Route exact path='/' > 
+            <Home/>
           </Route>
-          <Route exact path='/'> 
+          <Route  path='/create' > 
           <Create/>
           </Route>
-
-        </h1>
+          <Route  path='/blogs/:id' > 
+          <Blogdetails/>
+          </Route>
+          </Switch>      
       </div>
     </div>
+    </BrowserRouter>
   );
 }
 
